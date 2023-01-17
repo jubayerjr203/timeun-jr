@@ -6,12 +6,6 @@ import { TIME_ZONE_OFFSETS } from "../utils/utils";
  * useClock Hook
  * @param {String} timeZone [PST , UTC, GMT]
  * @param {number} offset [-12 -> 12]
- * @typedef {object} MyObject
- * @property {number} date
- * @property {number} dateutc
- * @property {number} offset
- * @property {number} timezone
- * @returns {MyObject}
  */
 const useClock = (timeZone, offset) => {
   const [UTC, setUTC] = useState(null);
@@ -23,7 +17,7 @@ const useClock = (timeZone, offset) => {
   useEffect(() => {
     // This `date` will reprasent your current date and time.
     let date = new Date();
-    // `offset` will return the deffrence between your time and UTC time in minutes. -360 (-6 hours). it means that it is 6 hours behind UTC.
+    // `Loffset` will return the deffrence between your time and UTC time in minutes. -360 (-6 hours). it means that it is 6 hours behind UTC.
     const Loffset = date.getTimezoneOffset();
     // This will return a new Date object that represents the original date, but with the time zone offset added to it. if your time is 12:00PM and Offset is -360/-6 hours, then it will be 6:00AM. (if your offset '0' then its return ORG time not UTC)
     date = addMinutes(date, Loffset);
