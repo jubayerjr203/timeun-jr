@@ -1,7 +1,6 @@
 import { format } from "date-fns";
 
 function Clock_Display({ date, title, timeZone, offset }) {
-  console.log(date);
   //  converting the offset, munite to hour just for displaying.
   const offsetHour = offset / 60;
   return (

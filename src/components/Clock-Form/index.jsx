@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { TIME_ZONE_OFFSETS } from "../../utils/utils";
 
-const Clock__Form = ({ title = true, edit = false, hendelClock, formName }) => {
-  const [FormState, setFormState] = useState({
-    title: "",
-    timeZone: "UTC",
-    offset: 0,
-  });
+const Clock__Form = ({
+  title = true,
+  edit = false,
+  hendelClock,
+  formName,
+  values,
+}) => {
+  const [FormState, setFormState] = useState({ ...values });
 
   useEffect(() => {
     if (TIME_ZONE_OFFSETS[FormState.timeZone]) {
